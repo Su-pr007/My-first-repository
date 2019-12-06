@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'>
+  <title>Лучшая таблица</title>
+  <link id='link' rel="stylesheet" href="css/style.css">
+  <script src='js/jQuery.min.js'></script>
+ </head>
+ <body>
+ <a id='changeStyle' onclick='changeStyle()'>Другой стиль
+ <svg>
+  <polyline points='20,30 50,80 20,130' fill='none' stroke='gray' stroke-width='20'/>
+ </svg>
+ 
+ </a>
+  <label class='labInp' for="co lumns">
+    Столбцов:
+    <input type='number' class='width' value='11' id='columns' placeholder='11'>
+  </label>
+  <label class='labInp' for="rows">
+    Строк:
+    <input type='number' class='height' value='11' id="rows" placeholder='11'>
+  </label>
+  <br>
+  <label class='labInp' for="columns">
+    Цвет 1:
+    <input type='text' class='color1' value='crimson' placeholder='crimson' style='height: 36px;'>
+  </label>
+  <label class='labInp' for="columns">
+    Цвет 2:
+    <input type='text' class='color2' value='#909' placeholder='#909' style='height: 36px;'>
+  </label>
+  <label class='labInp' for="columns">
+   <input id='button_table' value='Создать/Убрать' type='button' onclick='buttonClick()'>
+ </label>
+  <script src='js/script.js'></script>
+ </body>
+</html>
