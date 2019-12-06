@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>3D Cube</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="cube">
+			<div class="side front">
+		<div id='time'></div>
+		</div>
+			<div class="side left"><div class="someth" id="someth"><h2>Вы уже есть?</h2><div class='flex'><input type="button" value='Я уже есть' onclick='rotY(180)'><input type="button" value='Я ещё нет' onclick='rotY(90)'></div></div></div>
+			<div class="side right"><div id="author" class="author"><h2>Авторизация</h2>
+				<div class='flex'>
+				<label for="authorLogin">Логин:</label><input type="text" id="authorLogin">
+			</div>
+				<div class='flex'>
+				<label for="authorPassword">Пароль:</label><input type="text" id="authorPassword"></div></div></div>
+			<div class="side back"><div class="reg" id="reg"><h2>Регистрация</h2>
+				<div class="flex"><label for="regLogin">Логин:</label><input type="text" id="regLogin"></div>
+				<div class="flex"><label for="regPassword">Пароль:</label><input type="text" id="regPassword"></div></div></div>
+		</div>
+	</div>
+	<script src='js/script.js'></script>
+</body>
+</html>
