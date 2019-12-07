@@ -1,5 +1,4 @@
 'use strict'
-$(document).ready(function(){$('#inpChess').hide()})
 function addBoard(){
 	$('body').append('<div class="container"></div>');
 	for (let i=0;i<8;i++){
@@ -28,23 +27,35 @@ function addDraughts(){
 	$('body').append('<div id="lot1" class="lotok">Black<hr></div><div id="lot2" class="lotok">White<hr></div>');
 	$('.black').droppable({
 		accept: 'img',
-		hoverClass: 'hover',
+		hoverClass: 'green',
 		greedy: true,
 		tolerance: 'pointer',
 	});
+	$('.white').droppable({
+		accept: 'img',
+		greedy: false,
+		hoverClass: 'red',
+		drop: function(){
+			$('.ui-draggable-dragging').draggable({revert: true});
+		}
+	})
 	$('.lotok').droppable({
 		accept: 'img',
-		hoverClass: 'hover',
+		hoverClass: 'green',
 		greedy: true,
 		tolerance: 'pointer',
 		drop: function(){
-			if($('.ui-draggable-dragging').hasClass('blackD')&&$(this).attr('id')=='lot1' || $('.ui-draggable-dragging').hasClass('whiteD')&&$(this).attr('id')=='lot2'){
-				$('.ui-draggable-dragging').hasClass('blackD')?blackSteps++:whiteSteps++;
-				$('.ui-draggable-dragging').css('pointer-events', 'none');
+			let currentDrag = $('.ui-draggable-dragging');
+			if(currentDrag.hasClass('blackD')&&$(this).attr('id')=='lot1' || currentDrag.hasClass('whiteD')&&$(this).attr('id')=='lot2'){
+				currentDrag.hasClass('blackD')?blackSteps++:whiteSteps++;
+				currentDrag.css('pointer-events', 'none');
 				console.log('Черные - ' + blackSteps + ',Белые - ' + whiteSteps);
 			}
-			else alert('Не тот лоток')
-			if(blackSteps==12 || whiteSteps==12) blackSteps==12?alert('Победили белые'):alert('Победили черные');
+			else alert('Не тот лоток');
+			if(blackSteps==12 || whiteSteps==12){
+				blackSteps==12?alert('Победили белые'):alert('Победили черные');
+				if(confirm('Страница будет перезагружена')) document.location.reload()
+			}
 		},
 	})
 }

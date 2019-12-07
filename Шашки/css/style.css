@@ -30,6 +30,9 @@
 	border: 2px groove #ccc;
 	border-radius: 5px;
 }
-.hover{
+.green{
 	background-color: green;
+}
+.red{
+	background-color: red;
 }
